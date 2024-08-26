@@ -29,7 +29,7 @@ export class SqureElements {
     this.element.style.height = '100px';
     this.element.style.backgroundColor = this.squreBackground;
     this.element.addEventListener('click', () => {
-      this.decreaseCount;
+      this.decreaseCount();
     });
     this.element.textContent = `${this.count}`;
     root.appendChild(this.element);
