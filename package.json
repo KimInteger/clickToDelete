@@ -1,0 +1,19 @@
+{
+  "name": "clicktodelete",
+  "version": "1.0.0",
+  "description": "\"랜덤한 위치에 div생성 및 클릭시 삭제됨 색상별로 클릭수가 다름\"",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/KimInteger/clickToDelete.git"
+  },
+  "author": "김정수",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/KimInteger/clickToDelete/issues"
+  },
+  "homepage": "https://github.com/KimInteger/clickToDelete#readme"
+}
