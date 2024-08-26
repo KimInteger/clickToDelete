@@ -5,7 +5,9 @@
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "babel src --out-dir dist --extensions \".ts,.tsx\"",
+    "build:babel": "babel src --out-dir dist --extensions \".ts,.tsx\"",
+    "build:prod": "webpack --mode=production",
+    "build:dev": "webpack --mode=development",
     "start": "node dist/app.js"
   },
   "repository": {
