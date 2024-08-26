@@ -37,10 +37,12 @@ export class SqureElements {
 
   private decreaseCount = (): void => {
     if (this.count > 0) {
-      this.count -= 1;
-      this.element.textContent = `${this.count}`;
-    } else if (this.count <= 0) {
-      this.element.remove();
+      if (this.count === 1) {
+        this.element.remove();
+      } else {
+        this.count -= 1;
+        this.element.textContent = `${this.count}`;
+      }
     }
   };
 }
