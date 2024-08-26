@@ -4,7 +4,9 @@
   "description": "\"랜덤한 위치에 div생성 및 클릭시 삭제됨 색상별로 클릭수가 다름\"",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "babel src --out-dir dist --extensions \".ts,.tsx\"",
+    "start": "node app.js"
   },
   "repository": {
     "type": "git",
