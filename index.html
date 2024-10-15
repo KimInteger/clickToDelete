@@ -7,6 +7,124 @@
   </head>
   <body>
     <div id="root"></div>
-    <script src="./dist/bundle.js"></script>
+    <script>
+      /*
+       * ATTENTION: The "eval" devtool has been used (maybe by default in mode: "development").
+       * This devtool is neither made for production nor for readable output files.
+       * It uses "eval()" calls to create a separate source file in the browser devtools.
+       * If you are trying to read the output file, select a different devtool (https://webpack.js.org/configuration/devtool/)
+       * or disable the default devtool with "devtool: false".
+       * If you are looking for production-ready output files, see mode: "production" (https://webpack.js.org/configuration/mode/).
+       */
+      /******/ (() => {
+        // webpackBootstrap
+        /******/ 'use strict';
+        /******/ var __webpack_modules__ = {
+          /***/ './src/lib/countToColor.ts':
+            /*!*********************************!*\
+  !*** ./src/lib/countToColor.ts ***!
+  \*********************************/
+            /***/ (__unused_webpack_module, exports) => {
+              eval(
+                "\n\nObject.defineProperty(exports, \"__esModule\", ({\n  value: true\n}));\nexports.countToColor = void 0;\nvar countToColor = function countToColor(color) {\n  var count;\n  switch (color) {\n    case 'red':\n      count = 1;\n      break;\n    case 'blue':\n      count = 2;\n      break;\n    case 'green':\n      count = 3;\n      break;\n    case 'yellow':\n      count = 4;\n      break;\n    case 'purple':\n      count = 5;\n      break;\n    default:\n      count = 0;\n      break;\n  }\n  return count;\n};\nexports.countToColor = countToColor;\n\n//# sourceURL=webpack://clicktodelete/./src/lib/countToColor.ts?",
+              );
+
+              /***/
+            },
+
+          /***/ './src/lib/pullRandomInt.ts':
+            /*!**********************************!*\
+  !*** ./src/lib/pullRandomInt.ts ***!
+  \**********************************/
+            /***/ (__unused_webpack_module, exports) => {
+              eval(
+                '\n\nObject.defineProperty(exports, "__esModule", ({\n  value: true\n}));\nexports.pullRandomInt = void 0;\nvar pullRandomInt = function pullRandomInt(min, max) {\n  var result = Math.floor(Math.random() * (max - min + 1)) + min;\n  return result;\n};\nexports.pullRandomInt = pullRandomInt;\n\n//# sourceURL=webpack://clicktodelete/./src/lib/pullRandomInt.ts?',
+              );
+
+              /***/
+            },
+
+          /***/ './src/lib/responseSquare.ts':
+            /*!***********************************!*\
+  !*** ./src/lib/responseSquare.ts ***!
+  \***********************************/
+            /***/ (__unused_webpack_module, exports, __webpack_require__) => {
+              eval(
+                '\n\nObject.defineProperty(exports, "__esModule", ({\n  value: true\n}));\nvar squreColor_1 = __webpack_require__(/*! ../static/squreColor */ "./src/static/squreColor.ts");\nvar squrecreate_1 = __webpack_require__(/*! ./squrecreate */ "./src/lib/squrecreate.ts");\ndocument.addEventListener(\'DOMContentLoaded\', function () {\n  var root = document.getElementById(\'root\');\n  if (root) {\n    var createSquare = setInterval(function () {\n      var square = new squrecreate_1.SqureElements(root, squreColor_1.squreColor);\n    }, 1000);\n  } else {\n    console.error(\'root가 없단다 친구야.\');\n  }\n});\n\n//# sourceURL=webpack://clicktodelete/./src/lib/responseSquare.ts?',
+              );
+
+              /***/
+            },
+
+          /***/ './src/lib/squrecreate.ts':
+            /*!********************************!*\
+  !*** ./src/lib/squrecreate.ts ***!
+  \********************************/
+            /***/ (__unused_webpack_module, exports, __webpack_require__) => {
+              eval(
+                '\n\nfunction _typeof(o) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (o) { return typeof o; } : function (o) { return o && "function" == typeof Symbol && o.constructor === Symbol && o !== Symbol.prototype ? "symbol" : typeof o; }, _typeof(o); }\nfunction _classCallCheck(a, n) { if (!(a instanceof n)) throw new TypeError("Cannot call a class as a function"); }\nfunction _defineProperties(e, r) { for (var t = 0; t < r.length; t++) { var o = r[t]; o.enumerable = o.enumerable || !1, o.configurable = !0, "value" in o && (o.writable = !0), Object.defineProperty(e, _toPropertyKey(o.key), o); } }\nfunction _createClass(e, r, t) { return r && _defineProperties(e.prototype, r), t && _defineProperties(e, t), Object.defineProperty(e, "prototype", { writable: !1 }), e; }\nfunction _toPropertyKey(t) { var i = _toPrimitive(t, "string"); return "symbol" == _typeof(i) ? i : i + ""; }\nfunction _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e = t[Symbol.toPrimitive]; if (void 0 !== e) { var i = e.call(t, r || "default"); if ("object" != _typeof(i)) return i; throw new TypeError("@@toPrimitive must return a primitive value."); } return ("string" === r ? String : Number)(t); }\nObject.defineProperty(exports, "__esModule", ({\n  value: true\n}));\nexports.SqureElements = void 0;\nvar countToColor_1 = __webpack_require__(/*! ./countToColor */ "./src/lib/countToColor.ts");\nvar pullRandomInt_1 = __webpack_require__(/*! ./pullRandomInt */ "./src/lib/pullRandomInt.ts");\nvar SqureElements = /*#__PURE__*/function () {\n  function SqureElements(root, squreColor) {\n    var _this = this;\n    _classCallCheck(this, SqureElements);\n    this.decreaseCount = function () {\n      if (_this.count > 0) {\n        if (_this.count === 1) {\n          _this.element.remove();\n        } else {\n          _this.count -= 1;\n          _this.element.textContent = "".concat(_this.count);\n        }\n      }\n    };\n    this.element = document.createElement(\'div\');\n    this.colorIndex = (0, pullRandomInt_1.pullRandomInt)(0, squreColor.length - 1);\n    this.squreBackground = squreColor[this.colorIndex];\n    this.count = (0, countToColor_1.countToColor)(this.squreBackground);\n    this.initialize(root);\n  }\n  return _createClass(SqureElements, [{\n    key: "initialize",\n    value: function initialize(root) {\n      var _this2 = this;\n      var windowWidth = window.innerWidth;\n      var windowHeight = window.innerHeight;\n      var randomLeft = (0, pullRandomInt_1.pullRandomInt)(0, windowWidth - 100);\n      var randomTop = (0, pullRandomInt_1.pullRandomInt)(0, windowHeight - 100);\n      this.element.style.position = \'absolute\';\n      this.element.style.left = "".concat(randomLeft, "px");\n      this.element.style.top = "".concat(randomTop, "px");\n      this.element.style.width = \'100px\';\n      this.element.style.height = \'100px\';\n      this.element.style.backgroundColor = this.squreBackground;\n      this.element.addEventListener(\'click\', function () {\n        _this2.decreaseCount();\n      });\n      this.element.textContent = "".concat(this.count);\n      root.appendChild(this.element);\n    }\n  }]);\n}();\nexports.SqureElements = SqureElements;\n\n//# sourceURL=webpack://clicktodelete/./src/lib/squrecreate.ts?',
+              );
+
+              /***/
+            },
+
+          /***/ './src/static/squreColor.ts':
+            /*!**********************************!*\
+  !*** ./src/static/squreColor.ts ***!
+  \**********************************/
+            /***/ (__unused_webpack_module, exports) => {
+              eval(
+                "\n\nObject.defineProperty(exports, \"__esModule\", ({\n  value: true\n}));\nexports.squreColor = void 0;\nexports.squreColor = ['red', 'blue', 'green', 'yellow', 'purple'];\n\n//# sourceURL=webpack://clicktodelete/./src/static/squreColor.ts?",
+              );
+
+              /***/
+            },
+
+          /******/
+        };
+        /************************************************************************/
+        /******/ // The module cache
+        /******/ var __webpack_module_cache__ = {};
+        /******/
+        /******/ // The require function
+        /******/ function __webpack_require__(moduleId) {
+          /******/ // Check if module is in cache
+          /******/ var cachedModule = __webpack_module_cache__[moduleId];
+          /******/ if (cachedModule !== undefined) {
+            /******/ return cachedModule.exports;
+            /******/
+          }
+          /******/ // Create a new module (and put it into the cache)
+          /******/ var module = (__webpack_module_cache__[moduleId] = {
+            /******/ // no module.id needed
+            /******/ // no module.loaded needed
+            /******/ exports: {},
+            /******/
+          });
+          /******/
+          /******/ // Execute the module function
+          /******/ __webpack_modules__[moduleId](
+            module,
+            module.exports,
+            __webpack_require__,
+          );
+          /******/
+          /******/ // Return the exports of the module
+          /******/ return module.exports;
+          /******/
+        }
+        /******/
+        /************************************************************************/
+        /******/
+        /******/ // startup
+        /******/ // Load entry module and return exports
+        /******/ // This entry module can't be inlined because the eval devtool is used.
+        /******/ var __webpack_exports__ = __webpack_require__(
+          './src/lib/responseSquare.ts',
+        );
+        /******/
+        /******/
+      })();
+    </script>
   </body>
 </html>
