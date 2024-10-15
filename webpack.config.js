@@ -1,6 +1,6 @@
 const path = require('path');
 
-const entryPoint = './src/lib/squreCreateBtn.ts';
+const entryPoint = './src/lib/responseSquare.ts';
 
 module.exports = {
   entry: entryPoint,
